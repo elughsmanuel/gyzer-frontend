@@ -24,7 +24,7 @@ const Dashboard = () => {
                     return;
                 }
 
-                const response = await axios.get("http://localhost:8000/api/v1/users/profile/get-my-profile", {
+                const response = await axios.get("https://gyzer-tech.onrender.com/api/v1/users/profile/get-my-profile", {
                     headers: {
                         Authorization: `Bearer ${accessToken}`,
                     },
@@ -35,7 +35,7 @@ const Dashboard = () => {
                 const firstName = data.firstName;
                 setFirstName(firstName);
 
-                const allEvaluationResponse = await axios.get("http://localhost:8000/api/v1/evaluations/get-my-evaluations", {
+                const allEvaluationResponse = await axios.get("https://gyzer-tech.onrender.com/api/v1/evaluations/get-my-evaluations", {
                     headers: {
                         Authorization: `Bearer ${accessToken}`,
                     },
@@ -47,7 +47,7 @@ const Dashboard = () => {
                 const allEvaluationsItemsData = allEvaluationResponse.data.data;
                 setAllEvaluationsItems(allEvaluationsItemsData);
 
-                const sentEvaluationResponse = await axios.get("http://localhost:8000/api/v1/evaluations/get-my-evaluations?type=sent", {
+                const sentEvaluationResponse = await axios.get("https://gyzer-tech.onrender.com/api/v1/evaluations/get-my-evaluations?type=sent", {
                     headers: {
                         Authorization: `Bearer ${accessToken}`,
                     },
@@ -56,7 +56,7 @@ const Dashboard = () => {
                 const sentEvaluationsData = sentEvaluationResponse.data.data.length;
                 setSentEvaluations(sentEvaluationsData);
 
-                const receivedEvaluationResponse = await axios.get("http://localhost:8000/api/v1/evaluations/get-my-evaluations?type=received", {
+                const receivedEvaluationResponse = await axios.get("https://gyzer-tech.onrender.com/api/v1/evaluations/get-my-evaluations?type=received", {
                     headers: {
                         Authorization: `Bearer ${accessToken}`,
                     },

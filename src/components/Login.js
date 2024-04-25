@@ -20,7 +20,7 @@ const Login = () => {
             await new Promise(resolve => setTimeout(resolve, 1000));
 
             const response = await axios.post(
-                "http://localhost:8000/api/v1/auth/login",
+                "https://gyzer-tech.onrender.com/api/v1/auth/login",
                 {
                     email,
                     password,

@@ -37,7 +37,7 @@ const AddEvaluation = () => {
             await new Promise(resolve => setTimeout(resolve, 1000));
 
             const response = await axios.post(
-                `http://localhost:8000/api/v1/evaluations/create/${evaluateeId}`,
+                `https://gyzer-tech.onrender.com/api/v1/evaluations/create/${evaluateeId}`,
                 {
                     workQualityScore,
                     workQualityComment,
@@ -86,7 +86,7 @@ const AddEvaluation = () => {
                 }
 
                 const response = await axios.get(
-                "http://localhost:8000/api/v1/users/profile/get-my-profile",
+                "https://gyzer-tech.onrender.com/api/v1/users/profile/get-my-profile",
                 {
                     headers: {
                     Authorization: `Bearer ${accessToken}`,
