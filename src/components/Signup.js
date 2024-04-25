@@ -66,11 +66,12 @@ const Signup = () => {
 
     const handleCloseErrorPopup = () => {
         setError("");
-      };
+    };
 
     return (
         <div className='signup__container'>
             <h2>Sign up </h2>
+            {success && <p className="success-message">{success}</p>}
             <form className='signup__form' onSubmit={handleSubmit}>
                 <label htmlFor='firstName'>First Name</label>
                 <input
@@ -150,7 +151,6 @@ const Signup = () => {
             {error && (
                 <ErrorMessagePopup message={error} onClose={handleCloseErrorPopup} />
             )}
-             {success && <p className="success-message">{success}</p>}
         </div>
     );
 };
