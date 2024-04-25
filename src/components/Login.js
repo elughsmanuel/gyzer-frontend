@@ -2,10 +2,13 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Cookies from "js-cookie";
+import ErrorMessagePopup from "./ErrorMessagePopup";
 
 const Login = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [error, setError] = useState(false);
+    const [loading, setLoading] = useState(false);
 
     const navigate = useNavigate();
 
@@ -13,6 +16,9 @@ const Login = () => {
 
     const postLoginDetails = async () => {
         try {
+            setLoading(true);
+            await new Promise(resolve => setTimeout(resolve, 1000));
+
             const response = await axios.post(
                 "http://localhost:8000/api/v1/auth/login",
                 {
@@ -33,15 +39,21 @@ const Login = () => {
             
             navigate("/dashboard");
         } catch (error) {
+            setError(error.response.data.data);
             console.error(error);
+        } finally {
+            setLoading(false);
         }
     };
 
     const handleSubmit = (e) => {
         e.preventDefault();
-
         postLoginDetails();
     };
+
+    const handleCloseErrorPopup = () => {
+        setError("");
+      };
 
     return (
         <div className='login__container'>
@@ -66,7 +78,9 @@ const Login = () => {
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                 />
-                <button className='loginBtn'>SIGN IN</button>
+               <button className='loginBtn' disabled={loading}>
+                    {loading ? "Loading..." : "LOGIN"}
+                </button>
                 <p>
                     Don't have an account?{" "}
                     <span className='link' onClick={gotoSignUpPage}>
@@ -74,6 +88,9 @@ const Login = () => {
                     </span>
                 </p>
             </form>
+            {error && (
+                <ErrorMessagePopup message={error} onClose={handleCloseErrorPopup} />
+            )}
         </div>
     );
 };

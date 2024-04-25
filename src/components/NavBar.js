@@ -2,6 +2,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const Navbar = ({ firstName, handleSignOut }) => {
+  const handleLogout = () => {
+    setTimeout(() => {
+      handleSignOut();
+    }, 1000);
+  };
+
   return (
     <nav className="navbar">
       <div className="container">
@@ -19,7 +25,7 @@ const Navbar = ({ firstName, handleSignOut }) => {
             </div>
           <div className="navbar__greeting">Hello, {firstName}</div>
           <div className="navbar__links">
-            <button className="btn" onClick={handleSignOut}>
+              <button className="btn" onClick={handleLogout}>
               Logout
             </button>
           </div>

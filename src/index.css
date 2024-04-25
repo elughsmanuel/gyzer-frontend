@@ -185,6 +185,57 @@ button {
   margin: 40px 20px 20px;
 }
 
+.error-popup {
+  position: fixed;
+  top: 15%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #f44336;
+  padding: 30px;
+  border-radius: 5px;
+  color: #fff;
+  text-align: center;
+}
+
+.success-message {
+  position: fixed;
+  top: 15%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #1c471d;
+  padding: 30px;
+  border-radius: 5px;
+  color: #fff;
+  text-align: center;
+}
+
+.error-popup__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.error-popup__message {
+  flex: 1;
+  margin: 0;
+}
+
+.error-popup__close-btn {
+  /* width: 0; */
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  padding: 0;
+  border-radius: 5px;
+  text-align: right;
+}
+
+.error-popup__close-btn:hover {
+  color: #c0c0c0;
+}
+
+
 @media screen and (max-width: 800px) {
     .login__container,
     .signup__container {

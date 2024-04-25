@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import ErrorMessagePopup from "./ErrorMessagePopup";
 
 const Signup = () => {
     const [firstName, setFirstName] = useState("");
@@ -10,6 +11,9 @@ const Signup = () => {
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
     const [managerId, setManagerId] = useState("");
+    const [error, setError] = useState(false);
+    const [success, setSuccess] = useState("");
+    const [loading, setLoading] = useState(false);
 
     const navigate = useNavigate();
 
@@ -17,6 +21,9 @@ const Signup = () => {
 
     const postSignUpDetails = async () => {
         try {
+            setLoading(true);
+            await new Promise(resolve => setTimeout(resolve, 1000));
+
             const response = await axios.post(
                 "http://localhost:8000/api/v1/auth/sign-up",
                 {
@@ -38,17 +45,28 @@ const Signup = () => {
             const data = response.data;
             console.log(data);
 
-            navigate("/");
-        } catch (error) {
+            setSuccess("Created");
+
+            setTimeout(() => {
+                navigate("/");
+            }, 1000);
+
+           } catch (error) {
+            setError(error.response.data.data);
             console.error(error);
+        } finally {
+            setLoading(false);
         }
     };
     
     const handleSubmit = (e) => {
         e.preventDefault();
-
         postSignUpDetails();
     };
+
+    const handleCloseErrorPopup = () => {
+        setError("");
+      };
 
     return (
         <div className='signup__container'>
@@ -119,7 +137,9 @@ const Signup = () => {
                     required
                     onChange={(e) => setManagerId(e.target.value)}
                 />
-                <button className='signupBtn'>SIGN UP</button>
+                <button className='loginBtn' disabled={loading}>
+                    {loading ? "Loading..." : "SIGN UP"}
+                </button>
                 <p>
                     Already have an account?{" "}
                     <span className='link' onClick={gotoLoginPage}>
@@ -127,6 +147,10 @@ const Signup = () => {
                     </span>
                 </p>
             </form>
+            {error && (
+                <ErrorMessagePopup message={error} onClose={handleCloseErrorPopup} />
+            )}
+             {success && <p className="success-message">{success}</p>}
         </div>
     );
 };
