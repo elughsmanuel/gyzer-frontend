@@ -10,7 +10,7 @@ const Navbar = ({ firstName, handleSignOut }) => {
         </Link>
         <div className="navbar_right">
             <div className="navbar_links__box">
-            <Link to="/dashboard/evaluation" className="navbar__link">
+            <Link to="/dashboard/add-evaluation" className="navbar__link">
                 Add Evaluation
             </Link>
             <Link to="/dashboard/profile" className="navbar__link">

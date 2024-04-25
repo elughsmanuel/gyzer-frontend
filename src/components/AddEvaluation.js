@@ -5,9 +5,8 @@ import axios from "axios";
 import Cookies from "js-cookie";
 import Navbar from "./NavBar";
 
-const Profile = () => {
+const AddEvaluation = () => {
     const [firstName, setFirstName] = useState("");
-    const [userData, setUserData] = useState(null);
 
     const navigate = useNavigate();
 
@@ -35,7 +34,6 @@ const Profile = () => {
             const firstName = data.firstName;
     
             setFirstName(firstName);
-            setUserData(data);
         } catch (error) {
             console.error(error);
         }
@@ -52,42 +50,10 @@ const Profile = () => {
   return (
     <div className="profile__container">
       <Navbar firstName={firstName} handleSignOut={handleSignOut} />
-      <h2 className="profile-text">Profile</h2>
-      <div className="profile">
-        <div className="profile__box">
-            {userData && (
-                <div className="profile__details">
-                    <p>
-                        <strong>First Name:</strong> {userData.firstName}
-                    </p>
-                    <p>
-                        <strong>Last Name:</strong> {userData.lastName}
-                    </p>
-                    <p>
-                        <strong>Email Address:</strong> {userData.email}
-                    </p>
-                    <p>
-                        <strong>Username:</strong> {userData.username}
-                    </p>
-                    <p>
-                        <strong>Role:</strong> {userData.role}
-                    </p>
-                </div>
-            )}
-        </div>
-        <div className="profile__box">
-            {userData && (
-                <div className="profile__details">
-                    <p>
-                    <strong>Joined:</strong> {new Date(userData.createdAt).toLocaleDateString('en-UK')}
-                    </p>
-                  
-                </div>
-            )}
-        </div>
-      </div>
+      <h2 className="profile-text">Add Evaluation</h2>
+
     </div>
   );
 };
 
-export default Profile;
+export default AddEvaluation;

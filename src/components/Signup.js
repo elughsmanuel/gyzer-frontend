@@ -48,14 +48,6 @@ const Signup = () => {
         e.preventDefault();
 
         postSignUpDetails();
-
-        setFirstName("");
-        setLastName("");
-        setEmail("");
-        setUsername("");
-        setPassword("");
-        setConfirmPassword("");
-        setManagerId("");
     };
 
     return (

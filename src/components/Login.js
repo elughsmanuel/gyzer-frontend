@@ -41,9 +41,6 @@ const Login = () => {
         e.preventDefault();
 
         postLoginDetails();
-
-        setEmail("");
-        setPassword("");
     };
 
     return (
