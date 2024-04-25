@@ -98,13 +98,21 @@ button {
 }
 
 .main-content {
-  padding: 40px 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 0;
+  z-index: 9;
 }
 
 .eva-box {
   display: flex;
   justify-content: space-between;
   margin-top: 20px;
+  padding: 0 20px;
 }
 
 .evaluation-box {
@@ -114,6 +122,7 @@ button {
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   display: block;
+  margin-bottom: 50px;
 }
 
 .evaluation-text {
@@ -121,6 +130,7 @@ button {
   font-weight: bold;
   text-transform: uppercase;
   margin-bottom: 0px;
+  padding: 40px 20px 0;
 }
 
 .evaluation-box h3 {
@@ -234,7 +244,46 @@ button {
 .error-popup__close-btn:hover {
   color: #c0c0c0;
 }
+.evaluation-items {
+  position: absolute;
+  top: 350px;
+  left: 0;
+  transform: translateX(0);
+  width: 50%;
+  padding: 40px 20px 0;
+}
 
+.evaluation-items h2 {
+  font-size: 20px;
+  font-weight: lighter;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+
+.evaluation-item {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  margin-bottom: 20px;
+}
+
+.evaluation-item h3 {
+  font-size: 20px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.evaluation-item p {
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+
+.evaluation-item strong {
+  text-transform: uppercase;
+}
 
 @media screen and (max-width: 800px) {
     .login__container,
