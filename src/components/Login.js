@@ -29,13 +29,6 @@ const Login = () => {
             const data = response.data;
             console.log(data);
 
-            if (data.error_message) {
-                alert(data.error_message);
-            } else {
-                alert('OK');
-                
-            }
-
             Cookies.set("accessToken", data.accessToken);
             
             navigate("/dashboard");
@@ -55,7 +48,6 @@ const Login = () => {
 
     return (
         <div className='login__container'>
-            <h1>Gyzer Tech</h1>
             <h2>Login </h2>
             <form className='login__form' onSubmit={handleSubmit}>
                 <label htmlFor='email'>Email</label>

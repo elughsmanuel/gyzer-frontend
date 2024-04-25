@@ -19,9 +19,7 @@ button {
     font-size: 16px;
 }
 .login__container,
-.signup__container,
-.verify,
-.dashboard {
+.signup__container {
     width: 100%;
     min-height: 100vh;
     padding: 50px 70px;
@@ -29,24 +27,19 @@ button {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-}
-h1 {
-    margin-bottom: 20px;
-}
+} 
 .dashboard h2 {
   margin-bottom: 20px;
 }
 .login__form,
-.verify__form,
 .signup__form {
-    width: 60%;
+    width: 50%;
     display: flex;
     flex-direction: column;
 }
 .loginBtn,
-.signupBtn,
-.codeBtn {
-    background-color: green;
+.signupBtn {
+    background-color: #333;
     color: #fff;
     margin-bottom: 15px;
 }
@@ -56,33 +49,145 @@ h1 {
 }
 .link {
     cursor: pointer;
-    color: rgb(39, 147, 39);
-}
-.code {
-    width: 50%;
-    text-align: center;
-}
-.verify__form {
-    align-items: center;
-}
-.close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
+    color: #333;
 }
 
-.close:hover,
-.close:focus {
-  color: black;
-  text-decoration: none;
+.navbar {
+  background-color: #333;
+  color: #fff;
+  padding: 20px 0;
+}
+
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.navbar_right {
+  display: flex;
+  align-items: center;
+}
+
+.navbar__brand {
+  font-size: 24px;
+}
+
+.navbar__greeting {
+  font-size: 18px;
+  color: #c0c0c0;
+  margin-right: 30px;
+}
+
+.navbar__logout {
+  margin-right: 20px;
+}
+
+.btn {
+  width: 120px;
+  background-color: #f44336;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
   cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #d32f2f;
+}
+
+.main-content {
+  padding: 40px 20px;
+}
+
+.eva-box {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.evaluation-box {
+  width: 30%;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: block;
+}
+
+.evaluation-text {
+  font-size: 30px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 0px;
+}
+
+.evaluation-box h3 {
+  font-size: 20px;
+  font-weight: lighter;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.evaluation-box h4 {
+  font-size: 30px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.profile__details {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.profile__details p {
+  margin-bottom: 10px;
+}
+
+.profile__details strong {
+  margin-right: 10px;
+}
+
+.navbar__link {
+  font-size: 18px;
+  color: #fff;
+  margin-right: 30px;
+  text-decoration: none;
+}
+
+.navbar__link:hover {
+  color: #c1c1c1;
+}
+
+.profile {
+  display: flex;
+}
+
+.profile__box {
+  width: 50%;
+  padding: 0px 20px;
+}
+
+.profile__details {
+  height: 200px;
+  padding: 20px;
+}
+
+.profile-text {
+  font-size: 30px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 40px 20px 20px;
 }
 
 @media screen and (max-width: 800px) {
     .login__container,
-    .signup__container,
-    .verify {
+    .signup__container {
         padding: 30px;
     }
 }

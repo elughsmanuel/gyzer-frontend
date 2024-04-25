@@ -38,13 +38,6 @@ const Signup = () => {
             const data = response.data;
             console.log(data);
 
-            if (data.error_message) {
-                alert(data.error_message);
-            } else {
-                alert('CREATED');
-                
-            }
-
             navigate("/");
         } catch (error) {
             console.error(error);
@@ -67,7 +60,6 @@ const Signup = () => {
 
     return (
         <div className='signup__container'>
-             <h1>Gyzer Tech</h1>
             <h2>Sign up </h2>
             <form className='signup__form' onSubmit={handleSubmit}>
                 <label htmlFor='firstName'>First Name</label>
