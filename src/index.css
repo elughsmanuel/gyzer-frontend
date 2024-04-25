@@ -285,9 +285,67 @@ button {
   text-transform: uppercase;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 767px) {
     .login__container,
     .signup__container {
         padding: 30px;
+    }
+
+    .navbar .container {
+      display: block;
+    }
+
+    .navbar_right {
+      display: block;
+    }
+
+   .navbar__link {
+      display: block;
+    }
+
+    .navbar__brand {
+      margin-bottom: 20px;
+    }
+
+    .navbar_right a {
+      margin-bottom: 5px;
+    }
+
+    .navbar__greeting {
+      margin-bottom: 5px;
+    }
+
+    .eva-box {
+      display: block;
+    }
+
+    .evaluation-box {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+
+    .main-content {
+      position: unset;
+      box-shadow: unset;
+    }
+
+    .evaluation-items {
+      position: unset;
+      width: 100%;
+      padding: 20px 20px 0;
+    }
+
+    .login__form,
+    .signup__form {
+    width: 100%;
+    }
+
+    .profile {
+      display: block;
+    }
+
+    .profile__box {
+      width: 100%;
+      margin-bottom: 20px;
     }
 }
